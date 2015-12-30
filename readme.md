@@ -43,7 +43,7 @@ In Fritzing you have to Browse to the toolchain folder. In **Edit** Menu choose 
 
 This folder is optional and can be used for your sourcefiles. Or you store them somewhere else.
 
-## Usage on linux
+## Usage on Linux
 
 ### Cc5x compiler
 To run the Cc5x compiler you need wine. All major linux distributions
@@ -66,7 +66,7 @@ unzip cc5xfree.zip
 [terms of use](http://www.bknd.com/cc5x/downl-stud.shtml))
 
 ### PK2Cmd
-To use with linux download
+To use with Linux download
 [PK2Cmd for linux from Microchip](http://ww1.microchip.com/downloads/en/DeviceDoc/pk2cmdv1-20Linux2-6.tar.gz)
 into the `PK2Cmd` folder and unpack it into it. On the command line
 this equals:
@@ -76,3 +76,7 @@ cd PK2Cmd
 wget http://ww1.microchip.com/downloads/en/DeviceDoc/pk2cmdv1-20Linux2-6.tar.gz
 tar zxf pk2cmdv1-20Linux2-6.tar.gz
 ```
+
+### Toolchain setup with Linux
+
+In settings use (see Windows instructions) use `pk2cc5x.sh` instead of `pk2cc5x.bat`.
