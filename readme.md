@@ -37,8 +37,46 @@ Download `pk2cmdv1-20.zip` and unzip all (4) files to this folder. The executabl
 
 In Fritzing you have to Browse to the toolchain folder. In **Edit** Menu choose **Preferences**. In **preferences** choose **Code View** tab and Browse to the location of the toolchain. Select the file  `pk2cc5x.bat`. Click on **OK**.
 
-## Work folder optional 
+## Work folder optional
 
 ![Work - folder](img/work_folder.gif)
 
 This folder is optional and can be used for your sourcefiles. Or you store them somewhere else.
+
+## Usage on Linux
+
+### Cc5x compiler
+To run the Cc5x compiler you need wine. All major linux distributions
+includes wine so install it using the package manager. On
+ubuntu/debian:
+```
+sudo apt-get install wine
+```
+
+Now download and unpack the Cc5x compiler to the `Cc5x` directory as
+described in the Windows instructions or from the command line issue
+the following commands:
+
+```
+cd Cc5x
+wget http://www.bknd.com/cc5xfree.zip
+unzip cc5xfree.zip
+```
+(If you do this be sure that you agree with the
+[terms of use](http://www.bknd.com/cc5x/downl-stud.shtml))
+
+### PK2Cmd
+To use with Linux download
+[PK2Cmd for linux from Microchip](http://ww1.microchip.com/downloads/en/DeviceDoc/pk2cmdv1-20Linux2-6.tar.gz)
+into the `PK2Cmd` folder and unpack it into it. On the command line
+this equals:
+
+```
+cd PK2Cmd
+wget http://ww1.microchip.com/downloads/en/DeviceDoc/pk2cmdv1-20Linux2-6.tar.gz
+tar zxf pk2cmdv1-20Linux2-6.tar.gz
+```
+
+### Toolchain setup with Linux
+
+In settings use (see Windows instructions) use `pk2cc5x.sh` instead of `pk2cc5x.bat`.
