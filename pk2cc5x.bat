@@ -10,7 +10,19 @@
 
 "%~1Cc5x\Cc5x.exe" "%~3%~4" -I"%~1Cc5x" -O%3 -a
 
+@ECHO OFF
+IF errorlevel 1 (
+    exit %errorlevel%
+)
+@ECHO ON
+
 @ECHO.
 @ECHO -NOW DOWNLOADING CODE WITH PK2CMD
 
 "%~1PK2Cmd\pk2cmd" -b"%~1PK2Cmd" -p%2 -f"%~3%~5.hex" -a4.5 -m -r -t -jn
+
+@ECHO OFF
+IF errorlevel 1 (
+    exit %errorlevel%
+)
+@ECHO ON
