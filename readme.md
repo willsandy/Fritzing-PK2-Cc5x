@@ -21,6 +21,9 @@ Download page [http://www.bknd.com/cc5x/downl-stud.shml](http://www.bknd.com/cc5
 
 Download  `cc5xfree.zip`  and unzip all (300) files to folder `Cc5x`.
 
+(If you do this be sure that you agree with the
+[terms of use](http://www.bknd.com/cc5x/downl-stud.shtml))
+
 The executable file is `CC5X.EXE`.
 
 ## PK2Cmd folder
@@ -42,6 +45,58 @@ In Fritzing you have to Browse to the toolchain folder. In **Edit** Menu choose 
 ![Work - folder](img/work_folder.gif)
 
 This folder is optional and can be used for your sourcefiles. Or you store them somewhere else.
+
+
+## Sharing code with Fritzing
+
+Example sketch with PIC 16F690 [pic_example.fzz](Work/pic_example.fzz)
+
+The example C-code [hello_blink.c](Work/hello_blink.c)
+
+When sharing code by exporting and importing sketches (`*.fzz` files) with other Fritzing users, the code found under the "code tab" will only be stored inside Fritzing. All previous bindings to a Platform/toolchain may have been lost.
+
+### Save the imported Source Code to your Platform/Tool chain
+
+Create an empty text file, in your preferred folder for source files, and copy the "content" from the Fritzing "code tab" to it. Use the same filename as found in the tab, and use the file extension `.c`.
+
+Choose **Import Code ...** in the **Code** menu and browse to the created source file. Click on **Open**. The new "code tab" in the **Code View** window is now binded to your source file.
+
+To avoid missunderstandings, you can now close the orginal tab. (Select the tab, and in the **Code** menu choose **Close Tab** and then check **Also delete the file**, as this orginal tab will not need to be used any moore). 
+
+![PK2CC5X Code view](img/pk2codeview.gif)
+
+You will now be able to use **Upload** in the **Code View</B> with a PIC processor. 
+
+### printf-debugging
+
+![USB-serial-converter](img/usb2serial.gif)
+
+If you have an **USB-to-Serial converter** you can use the Fritzing **Serial Monitor** to display texts and variable values from different locations in the program code with a `printf()` function. This will be a useful debugging tool.
+
+(If you are a Windows user, you may prefer to use the **UART Tool** inside the **PICKit2 Windows program** directly without the need of an external serial converter). 
+
+PICKit2 Windows program, Microchip Download [PICkit 2 V2.61 Install with .NET Framework](http://ww1.microchip.com/downloads/en/DeviceDoc/PICkit%202%20v2.61.00%20Setup%20dotNET%20A.zip) (30 Mb)
+
+USB-to-Serial-5V converter, Page [FTDI TTL-232R-5V](http://www.ftdichip.com/Products/Cables/USBTTLSerial.htm)
+
+## (Workaround if Fritzing lacks support for PK2CC5X toolchain)
+
+Example sketch with PIC 16F690 wrapped as Arduino [pic_example_ino.fzz](Work/pic_example.fzz)
+
+The example C-code wrapped as Arduino [hello_blink\hello_blink.ino](Work\hello_blink\hello_blink.ino)
+
+![Platform Arduino](img/platform_arduino.gif) ![PIC Workaround](img/platform_picino.gif)
+
+If the Fritzing version does not support this PK2CC5X toolchain, as a workaround the C-code could be "wrapped" as Arduino code (Arduino is actually using C++ code, which C is a subset of). 
+
+Change the **Platform Support** for Arduino by browsing to the BAT-file `picino.bat` in the toolchain folder. The PIC C-sourcefile now need to be stored as a `<name>.ino` file in a folder named `<name>` after the file. This is Arduino requirement is necessary.
+
+The BAT-file `picino.bat` will copy the file and change the exstension to `*.c` and then run the tool chain. The Arduino selections (Platform and Board) will be ignored, and the PIC-processor type will be hardcoded to **PIC16F690** inside the BAT.file.
+
+NOTE! This is just a workaround. The Arduino platform can not upload to PIC processors, and the PK2CC5X toolchain can not upload to Arduino boards.
+
+Don't forget to change back the **Platform Support** to your "true" Arduino location, when Arduino is what you want to use.
+
 
 ## Usage on Linux
 
@@ -79,4 +134,4 @@ tar zxf pk2cmdv1-20Linux2-6.tar.gz
 
 ### Toolchain setup with Linux
 
-In settings use (see Windows instructions) use `pk2cc5x.sh` instead of `pk2cc5x.bat`.
+In settings (see Windows instructions) use `pk2cc5x.sh` instead of `pk2cc5x.bat`.
