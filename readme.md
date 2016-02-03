@@ -113,7 +113,7 @@ USB-to-Serial-5V converter [FTDI TTL-232R-5V](http://www.ftdichip.com/Products/C
 
 Example sketch with PIC 16F690 wrapped as Arduino [pic_example_ino.fzz](Work/pic_example.fzz)
 
-Example C-code wrapped as Arduino [hello_blink\hello_blink.ino](Work\hello_blink\hello_blink.ino)
+Example C-code wrapped as Arduino [hello_blink\hello_blink.ino](Work/hello_blink/hello_blink.ino)
 
 ![Platform Arduino](img/platform_arduino.gif) ![PIC Workaround](img/platform_picino.gif)
 
